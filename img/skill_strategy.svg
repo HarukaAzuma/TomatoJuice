@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 160 160">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #97adc6;
+      }
+
+      .st1 {
+        stroke: #5c708b;
+      }
+
+      .st1, .st2 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .st3 {
+        fill: #5c708b;
+      }
+
+      .st2 {
+        stroke: #97adc6;
+      }
+    </style>
+  </defs>
+  <path class="st2" d="M30.06,115.77c10.06-4.13,26.46-9.4,47.24-9.83,23.6-.48,42.09,5.51,52.63,9.83"/>
+  <rect class="st0" x="45.35" y="73.56" width="13.79" height="35.54"/>
+  <rect class="st0" x="64.41" y="52.64" width="13.79" height="53.28"/>
+  <rect class="st0" x="83.46" y="38.71" width="13.79" height="67.21"/>
+  <rect class="st0" x="102.52" y="63.06" width="13.79" height="46.03"/>
+  <polygon class="st3" points="97.26 65.52 83.46 73.56 83.46 38.71 97.26 38.71 97.26 65.52"/>
+  <polygon class="st3" points="78.2 77.04 64.41 82.1 64.41 52.46 78.2 52.46 78.2 77.04"/>
+  <rect class="st3" x="45.35" y="73.56" width="13.79" height="10.72"/>
+  <path class="st1" d="M36.34,83.45c7.81,1.23,25.98,2.73,46.21-8.72,21.53-12.18,33.06-32.05,37.36-40.36"/>
+  <polygon class="st3" points="123.55 28.55 107.63 34.54 125.74 45.42 123.55 28.55"/>
+</svg>

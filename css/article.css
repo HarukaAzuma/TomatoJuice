@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+/* 全体的な間隔あけ headerとサムネイルの間隔も*/
+.container {
+    padding: 80px 25px;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 4px 4px 4px 0 #14354D33;
+}
+
+section {
+    margin-top: 70px;
+}
+
+/* 記事タイトル */
+h1 {
+    font-size: 2.6rem;
+
+    padding: 30px 0;
+    font-family: "kiwi maru", sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+
+    padding: 30px 0;
+    font-family: "kiwi maru", sans-serif;
+}
+
+.logo {
+    color: var(--base-red);
+}
+
+/* 見出し */
+h3 {
+    font-size: 2.4rem;
+    font-family: "kiwi maru";
+
+    padding-left: 8px;
+    margin-bottom: 30px;
+    /* color: var(--base-red);
+    background-color: #fff0f0;
+    border-left: 5px solid var(--base-green); */
+}
+
+h3:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(to right,
+            var(--base-red) 0, var(--base-red) 1rem,
+            transparent 1rem, transparent 2rem,
+            var(--base-green) 2rem, var(--base-green) 3rem,
+            transparent 3rem, transparent 4rem);
+}
+
+/* 子見出し */
+h4 {
+    font-family: "kiwi maru";
+
+    padding-left: 8px;
+    margin: 30px 0;
+    border-bottom: 2px solid rgb(255, 207, 117);
+    /* background-color: #fffcde; */
+    /* border-left: 5px solid rgb(255, 195, 84); */
+}
+
+h5 {
+    font-size: 1.8rem;
+    font-family: "kiwi maru";
+}
+
+.sub-h {
+    font-size: 1.8rem;
+    font-family: "kiwi maru";
+}
+
+/* サムネイル、タグ、日付、タイトル、もくじの設定 */
+.sub-title {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.hush a {
+    display: inline;
+
+    text-decoration: none;
+    color: #333;
+    background-color: #dedede;
+    padding: 5px 20px;
+    border-radius: 7px;
+}
+
+
+@media screen and (min-width: 1060px) {
+    pre.wp-block-code {
+        padding-left: 50px;
+        margin: 25px;
+        background-color: #272727;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* text-align: center; */
+        /* justify-content: center; */
+        font-size: 2rem;
+        font-family: 'MS Sans Serif';
+        color: #ffffff;
+        text-indent: 1em;
+    }
+
+
+}
+
+pre.wp-block-code {
+    padding: 20px;
+    overflow-x: auto;
+    margin: 15px;
+    background-color: #272727;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* text-align: center; */
+    /* justify-content: center; */
+    font-size: 1.4rem;
+    font-family: 'MS Sans Serif';
+    color: #ffffff;
+    text-indent: 1em;
+}
+
+code {
+    width: 360px;
+}
+
+/* もくじ */
+.toc {
+    background-color: var(--base-gray);
+    border-radius: 12px;
+
+    padding: 20px;
+    margin: 20px;
+}
+
+.toc-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc-number;
+}
+
+.toc-list>li {
+    counter-increment: toc-number;
+    padding: 12px 0 12px 44px;
+    position: relative;
+    border-bottom: 1px solid #e5d8c8;
+    font-size: 1.5rem;
+    font-family: "kiwi maru";
+}
+
+.toc-list li:last-child {
+    border-bottom: none;
+}
+
+.toc-list>li::before {
+    content: counter(toc-number);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 28px;
+    height: 28px;
+    background: #d32f2f;
+    color: #fff;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    font-family: "kiwi maru";
+}
+
+.toc-sublist {
+    list-style: none;
+    padding-left: 40px;
+
+}
+
+.toc-sublist li {
+    margin: 12px;
+}
+
+.toc-list a:hover {
+    color: var(--base-green);
+}
+
+.toc-list li:nth-child(even) a:hover {
+    color: var(--base-red);
+}
+
+/* ↑もくじ */
+
+/* 本文 */
+.text {
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.9;
+    font-size: 16px;
+    color: #333;
+}
+
+.ex {
+    padding: 10px 20px;
+}
+
+.text p {
+    margin-bottom: 1.5em;
+}
+
+.gif-chan {
+    text-align: center;
+}
+
+/* 最後のひとこと */
+
+.last {
+    margin: 20px 0;
+}
+
+/* =========================
+PCレイアウト（article + aside）
+========================= */
+@media screen and (min-width: 1060px) {
+
+    h1 {
+        font-size: 3.2rem;
+
+        padding: 30px 0;
+        font-family: "kiwi maru", sans-serif;
+    }
+
+    .pc-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .text {
+        max-width: 720px;
+        margin: 0 auto;
+        line-height: 1.9;
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* article */
+    .container {
+        width: 70%;
+        padding: 100px 60px;
+    }
+
+    .support {
+        width: 70%;
+    }
+
+    .sidebar {
+        width: 30%;
+        position: sticky;
+        top: 50px;
+        padding-right: 60px;
+    }
+}
+
+/* =========================
+    aside
+========================= */
+
+.sidebar section {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+    color: var(--base-green);
+}
+
+.sidebar li:nth-child(even) a:hover {
+    color: var(--base-red);
+}
+
+.profile img {
+    max-width: 50%;
+}
+
+@media screen and (min-width: 1060px) {
+    .profile img {
+        max-width: 100%;
+    }
+}
+
+.promo {
+    text-align: center;
+}

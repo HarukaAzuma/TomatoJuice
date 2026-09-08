@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+/* ==================== */
+/* トップページ 共通 */
+/* ==================== */
+
+main {
+    overflow-x: hidden;
+}
+
+.inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 2.4rem;
+    color: var(--base-black);
+    margin-bottom: 10px;
+}
+
+.section-title span {
+    font-size: 1.4rem;
+    color: var(--base-green);
+    letter-spacing: 0.05em;
+}
+
+.section-lead {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ==================== */
+/* トップページ専用ヘッダー色 */
+/* ==================== */
+
+.header--top {
+    background-color: var(--base-white);
+}
+
+/* ==================== */
+/* ヒーロー */
+/* ==================== */
+
+.hero {
+    position: relative;
+    padding: 130px 0 90px;
+    background-color: var(--base-gray);
+    overflow: hidden;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 1.3rem;
+    color: var(--base-white);
+    background-color: var(--base-green);
+    padding: 4px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 3rem;
+    line-height: 1.5;
+    color: var(--base-black);
+    margin-bottom: 24px;
+}
+
+.hero-title .accent {
+    color: var(--base-red);
+}
+
+.hero-lead {
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 34px;
+}
+
+.hero-cta {
+    display: inline-block;
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 1.5rem;
+    color: var(--base-white);
+    background-color: var(--base-red);
+    padding: 14px 34px;
+    border-radius: 999px;
+    box-shadow: 4px 4px 0 var(--base-black);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-cta:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--base-black);
+}
+
+/* ぷちトマトの装飾 */
+.hero-drips {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-drips img {
+    position: absolute;
+    width: 70px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.drip-1 {
+    top: 12%;
+    left: 8%;
+    width: 50px;
+    animation-delay: 0s;
+}
+
+.drip-2 {
+    top: 65%;
+    left: 14%;
+    width: 40px;
+    animation-delay: 1.2s;
+}
+
+.drip-3 {
+    top: 20%;
+    right: 9%;
+    width: 90px;
+    animation-delay: 0.6s;
+}
+
+.drip-4 {
+    top: 68%;
+    right: 15%;
+    width: 45px;
+    animation-delay: 1.8s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-drips img {
+        animation: none;
+    }
+}
+
+/* ==================== */
+/* 記事一覧 */
+/* ==================== */
+
+.articles {
+    padding: 80px 0;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.article-card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 0 #14354D33;
+    background-color: var(--base-white);
+}
+
+.card-link {
+    display: block;
+    color: inherit;
+}
+
+.card-thumb {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.article-card:hover .card-thumb img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.card-tags span {
+    font-size: 1.2rem;
+    color: var(--base-green);
+    border: 1px solid var(--base-green);
+    border-radius: 999px;
+    padding: 2px 12px;
+}
+
+.card-date {
+    font-size: 1.2rem;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.card-title {
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 1.9rem;
+    line-height: 1.5;
+    color: var(--base-black);
+    margin-bottom: 12px;
+}
+
+.card-excerpt {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.card-more {
+    font-size: 1.3rem;
+    color: var(--base-red);
+    font-weight: bold;
+}
+
+.article-card.coming-soon {
+    background-color: var(--base-gray);
+    box-shadow: none;
+    border: 2px dashed #d8cfc2;
+    display: flex;
+    align-items: center;
+}
+
+.card-body--soon {
+    text-align: center;
+    width: 100%;
+    padding: 40px 24px;
+}
+
+.card-soon-label {
+    font-size: 1.2rem;
+    color: var(--base-green);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.card-title--soon {
+    color: #999;
+}
+
+/* ==================== */
+/* About */
+/* ==================== */
+
+.about {
+    padding: 80px 0 100px;
+    background-color: var(--base-gray);
+}
+
+.about-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.about-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--base-white);
+    box-shadow: 4px 4px 4px 0 #14354D33;
+}
+
+.about-name {
+    font-family: "kiwi maru", "Noto Sans JP", "sans-serif";
+    font-size: 1.8rem;
+    color: var(--base-black);
+    margin-bottom: 10px;
+}
+
+.about-text p:not(.about-name) {
+    max-width: 480px;
+    line-height: 1.9;
+    color: #555;
+}
+
+/* ==================== */
+/* スクロールで出現 */
+/* ==================== */
+
+.article-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s, transform 0.6s;
+}
+
+.article-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================== */
+/* PC */
+/* ==================== */
+
+@media screen and (min-width: 1060px) {
+    .hero {
+        padding: 160px 0 140px;
+    }
+
+    .hero-title {
+        font-size: 4.2rem;
+    }
+
+    .hero-lead {
+        font-size: 1.6rem;
+    }
+
+    .article-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-inner {
+        flex-direction: row;
+        text-align: left;
+        gap: 50px;
+    }
+}

@@ -1,0 +1,577 @@
+@charset "utf-8";
+
+/* ==================== */
+/* base */
+/* ==================== */
+
+:root {
+    /* color */
+    --base-white: #FFFFFF;
+    --base-black: #282540;
+    --base-gray: #f7efe6;
+    --base-red: #FF3B2F;
+    --base-green: #67bc5e;
+
+    /* shadow */
+    --base-shadow: 4px 4px 4px 0 #14354D33;
+
+    --mm-red: #FF6B6B;
+    --mm-red-bg: #FFE8E5;
+    --mm-green: #67bc5e;
+    --mm-green-bg: #E4F5E1;
+    --mm-orange: #F5A623;
+    --mm-orange-bg: #FFF3DA;
+    --mm-blue: #4AA8E0;
+    --mm-blue-bg: #E4F1FB;
+    --mm-purple: #9B7FD4;
+    --mm-purple-bg: #EFE9FA;
+    --mm-pink: #FF6B7A;
+    --mm-pink-bg: #FFE5E8;
+    --mm-teal: #3DB8A5;
+    --mm-teal-bg: #DFF5F1;
+}
+
+html {
+    /* remの基準 */
+    font-size: 10px;
+
+    color: #333;
+    font-family: "Noto Sans JP", "sans-serif";
+}
+
+body {
+    overflow-x: hidden;
+    font-size: 1.5rem;
+    background-color: var(--base-white);
+}
+
+main {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+/* SP */
+.sp-none {
+    display: none;
+}
+
+/* PC */
+@media screen and (min-width:1060px) {
+    .sp-none {
+        display: block;
+    }
+
+    .pc-none {
+        display: none;
+    }
+}
+
+/* ==================== */
+/* header */
+/* ==================== */
+
+header {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    width: 95%;
+    transform: translateX(-50%);
+    background-color: var(--base-white);
+    box-shadow: var(--base-shadow);
+    /* 最上層レイヤーにおいで */
+    z-index: 1000;
+}
+
+/* ロゴ対navかハンバーガーを横並びにして両端に配置 */
+header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    height: 50px;
+}
+
+header li {
+    font-family: "kiwi maru", "Noto sans JP", "sans-serif";
+}
+
+header a {
+    color: var(--base-green);
+}
+
+.logo {
+    width: 200px;
+}
+
+.ooo {
+    color: var(--base-green);
+}
+
+.hamburger span {
+    display: block;
+
+    background-color: var(--base-green);
+    height: 1.5px;
+    width: 20px;
+}
+
+.hamburger span+span {
+    margin-top: 6px;
+}
+
+.mobile-menu {
+    height: 100dvh;
+    z-index: 1001;
+
+    position: fixed;
+    inset: 0;
+    background: #FBF7F0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+.mobile-menu-inner {
+
+    flex: 1;
+    padding: 20px 20px 12px;
+}
+
+/* 閉じるボタン */
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--mm-red);
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* ロゴ */
+.mobile-menu-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+/* ヒーロー(トマトイラスト+吹き出し) */
+.mobile-menu-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.mobile-menu-hero-img {
+    width: 90px;
+}
+
+.mobile-menu-hero-text {
+    font-family: "kiwi maru", "Noto sans JP", "sans-serif";
+    font-size: 1.3rem;
+    color: darkgray;
+    line-height: 1.6;
+}
+
+/* ナビリスト */
+.mobile-menu-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mm-item a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    border-radius: 40px;
+}
+
+.mm-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.mm-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.mm-en {
+    font-family: "kiwi maru", "Noto sans JP", "sans-serif";
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.mm-ja {
+    font-size: 1.05rem;
+    color: var(--base-black);
+}
+
+.mm-arrow {
+    font-size: 14px;
+}
+
+/* カラーバリエーション */
+.mm-item-red a { background: var(--mm-red-bg); }
+.mm-item-red .mm-icon { background: var(--mm-red); }
+.mm-item-red .mm-en, .mm-item-red .mm-arrow { color: var(--mm-red); }
+
+.mm-item-green a { background: var(--mm-green-bg); }
+.mm-item-green .mm-icon { background: var(--mm-green); }
+.mm-item-green .mm-en, .mm-item-green .mm-arrow { color: var(--mm-green); }
+
+.mm-item-orange a { background: var(--mm-orange-bg); }
+.mm-item-orange .mm-icon { background: var(--mm-orange); }
+.mm-item-orange .mm-en, .mm-item-orange .mm-arrow { color: var(--mm-orange); }
+
+.mm-item-blue a { background: var(--mm-blue-bg); }
+.mm-item-blue .mm-icon { background: var(--mm-blue); }
+.mm-item-blue .mm-en, .mm-item-blue .mm-arrow { color: var(--mm-blue); }
+
+.mm-item-purple a { background: var(--mm-purple-bg); }
+.mm-item-purple .mm-icon { background: var(--mm-purple); }
+.mm-item-purple .mm-en, .mm-item-purple .mm-arrow { color: var(--mm-purple); }
+
+.mm-item-pink a { background: var(--mm-pink-bg); }
+.mm-item-pink .mm-icon { background: var(--mm-pink); }
+.mm-item-pink .mm-en, .mm-item-pink .mm-arrow { color: var(--mm-pink); }
+
+/* SNSエリア */
+.mobile-menu-sns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e5ddd0;
+    position: relative;
+}
+
+.mobile-menu-sns-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.mobile-menu-sns-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--base-green);
+    color: #fff;
+}
+
+.mobile-menu-sns-text {
+    font-family: "kiwi maru", "Noto sans JP", "sans-serif";
+    font-size: 1.3rem;
+    flex: 1;
+    color: darkgray;
+}
+
+.mobile-menu-sns-img {
+    width: 70px;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+}
+
+/* フッター */
+.mobile-menu-footer {
+    position: relative;
+    background: var(--base-red);
+    color: #fff;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* 波線で表現するので角丸は不要 */
+    border-radius: 0;
+}
+
+.mm-footer-wave {
+    position: absolute;
+    top: -29px; /* 波の高さぶん上にずらす(=height分-1px程度) */
+    left: 0;
+    width: 100%;
+    height: 30px;
+    display: block;
+}
+
+.mm-footer-logo {
+    font-family: "kiwi maru", "Noto sans JP", "sans-serif";
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.mm-footer-copy {
+    font-size: 1rem;
+    text-align: right;
+    line-height: 1.5;
+}
+
+/* ドロップダウンメニュー */
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    flex-direction: column;
+
+    position: absolute;
+    top: 100%;
+    left: -35px;
+    margin-top: 24px;
+    background: var(--base-white);
+    box-shadow: var(--base-shadow);
+    border-radius: 35px;
+    min-width: 260px;
+    padding: 10px 0;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li {
+    padding: 4px 20px;
+}
+
+.dropdown a {
+    border-radius: 35px;
+    color: var(--base-black);
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.h-nav .dropdown-link-css:hover {
+    color: var(--mm-orange);
+    background-color: var(--mm-orange-bg);
+}
+
+.h-nav .dropdown-link-js:hover {
+    color: var(--mm-blue);
+    background-color: var(--mm-blue-bg);
+}
+
+.h-nav .dropdown-link-php:hover {
+    color: var(--mm-green);
+    background-color: var(--mm-green-bg);
+}
+
+.h-nav .dropdown-link-color:hover {
+    color: var(--mm-pink);
+    background-color: var(--mm-pink-bg);
+}
+
+.h-nav .dropdown-link-layout:hover {
+    color: var(--mm-teal);
+    background-color: var(--mm-teal-bg);
+}
+
+.h-nav .dropdown-link-figma:hover {
+    color: var(--mm-purple);
+    background-color: var(--mm-purple-bg);
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.dropdown-header-img {
+    width: 80px;
+}
+
+.dropdown-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    margin-right: 12px;
+}
+
+.dropdown-icon-css {
+    background: var(--mm-orange);
+}
+
+.dropdown-icon-js {
+    background: var(--mm-blue);
+}
+
+.dropdown-icon-php {
+    background: var(--mm-green);
+}
+
+.dropdown-icon-color {
+    background: var(--mm-pink);
+}
+
+.dropdown-icon-layout {
+    background: var(--mm-teal);
+}
+
+.dropdown-icon-figma {
+    background: var(--mm-purple);
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.dropdown-arrow {
+    margin-left: auto;
+}
+
+/* ---------- */
+/* pc */
+@media screen and (min-width: 1060px) {
+    header .inner {
+        height: 70px;
+        padding: 0 30px;
+    }
+
+    .logo {
+        width: 350px;
+    }
+
+    .h-nav ul {
+        display: flex;
+        gap: 37px;
+    }
+
+.h-nav > ul > li > a{
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.h-nav > ul > li > a:hover{
+    color: #e74c3c;
+}
+
+.h-nav > ul > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e74c3c;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.h-nav > ul > li > a:hover::after {
+    transform: scaleX(1);
+}
+
+    .h-nav .dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* =========================================== */
+/* footer */
+/* ======================================== */
+
+footer {
+    height: 10vh;
+    background-color: var(--base-green);
+    text-align: center;
+}
+
+/* 見出しの雫 */
+.title-drop {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: #FFE6CA;
+  border-radius: 0 100% 50% 50%/ 0 50% 50% 100%;
+  transform: rotate(45deg) skew(10deg, 10deg);
+  vertical-align: middle;
+}
+
+
+/* =========================================== */
+/* TOPに戻るボタン */
+/* ======================================== */
+
+.scrollTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+
+    height: 50px;
+    background-color: var(--base-red);
+    color: var(--base-green);
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    opacity: 0;
+    /* visibility: hidden; */
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.scrollTop.show {
+    opacity: 1;
+    /* visibility: visible; */
+    pointer-events: auto;
+    transition: 0.5s;
+}

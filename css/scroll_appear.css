@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/* その1 アンダーライン蛍光ペンのcssちゃん */
+
+.underline-target {
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(var(--base-green), var(--base-red)) 0 90%/0 10px no-repeat;
+    transition: background-size 1.5s;
+}
+
+.underline-target.underline-active {
+    background-size: 100% 10px;
+}
+
+/* ↓↓↓その2 画像のフェードイン トマトのイラスト↓↓↓ */
+
+/* 見えない状態を作るcss */
+.right-invisible {
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 1s;
+    transform: translateX(30px);
+}
+
+/* からの、フェードイン用css */
+.right-is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 見えない状態を作るcss */
+.left-invisible {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s;
+    transform: translateX(-150px);
+}
+
+/* からの、フェードイン用css */
+.left-is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.img-row {
+    display: flex;
+    justify-content: space-between;
+    /* 左右に広げる */
+    flex-wrap: wrap;
+    /* 幅が狭くなったら折り返す */
+    gap: 10px;
+}
+
+.img-row img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* その3 TOPに戻るボタンのフェードイン */
